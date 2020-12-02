@@ -70,6 +70,7 @@ public class login {
 		passwdtext = new JPasswordField();
 		passwdtext.setBounds(150, 130, 160, 22);
 		frame.getContentPane().add(passwdtext);
+		
 
 		final JButton ver = new JButton("Ver");
 

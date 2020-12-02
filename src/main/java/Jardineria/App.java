@@ -11,11 +11,14 @@ public class App {
 
     public static void main(String[] args) {
         clienteDao clienteDao = new clienteDao();
-        Scanner teclado = new Scanner(System.in);
+        //Scanner teclado = new Scanner(System.in);
 
-        try {//DNI no llega a 9 digios totales
+       /* Deshabilitamos los tryes and catch's debido a que son elementos estaticos y no mutables.
+        * 
+        * try {//DNI no llega a 9 digios totales
             clienteDao.save(BuilderCliente.crearcliente(1, "Manuel", DocumentoIdentidad.DNI, "7316A",
                     "0311msanch@e-itaca.es", "nonono"));
+            
         } catch (Exception e) {
             
             System.out.println(e.getMessage());
@@ -43,9 +46,12 @@ public class App {
             System.out.println(e.getMessage());
         }
 
+		*/
 
 
         pedidosDao pDao = new pedidosDao();
+        
+        
         
 
 
