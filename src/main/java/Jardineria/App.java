@@ -11,6 +11,9 @@ public class App {
 
     public static void main(String[] args) {
         clienteDao clienteDao = new clienteDao();
+        
+        
+        
         //Scanner teclado = new Scanner(System.in);
 
        /* Deshabilitamos los tryes and catch's debido a que son elementos estaticos y no mutables.
@@ -49,7 +52,7 @@ public class App {
 		*/
 
 
-        pedidosDao pDao = new pedidosDao();
+        //pedidosDao pDao = new pedidosDao();
         
         
         

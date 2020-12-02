@@ -1,4 +1,4 @@
-package GUI;
+package Jardineria;
 
 import java.awt.EventQueue;
 import Jardineria.PatronBuilder.*;
@@ -13,17 +13,22 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class createUser {
 
-	private JFrame frame;
+	public JFrame frame;
 	private JTextField codclienteText;
 	private JTextField nombretText;
 	private JTextField numIdentidad;
 	private JTextField correoText;
 	private JPasswordField contraseniaText;
+	
+	ArrayList<JTextField> clientesList = new ArrayList<>();
 	
 
 	/**
@@ -123,9 +128,14 @@ public class createUser {
 		frame.getContentPane().add(contraseniaText);
 		
 		final JButton OkBoton = new JButton("ACEPTAR");
+		OkBoton.setForeground(Color.BLACK);
 		OkBoton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				clientesList.addAll(Arrays.asList(codclienteText, nombretText, numIdentidad, correoText, contraseniaText) );
+				//Guarda todas las variables con comas usando el Arrays.asList()
+				
+				//System.out.println(codclienteText.getText());
 			}
 		});
 		OkBoton.addMouseListener(new MouseAdapter() {
@@ -136,12 +146,12 @@ public class createUser {
 		
 		JButton RestBoton = new JButton("RESET");
 		RestBoton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				codclienteText.setText(null);
+			 public void actionPerformed(ActionEvent arg0) {
+			 codclienteText.setText(null);
 				nombretText.setText(null);
 				numIdentidad.setText(null);
 				correoText.setText(null);
-				contraseniaText.setText(null);
+				contraseniaText.setText(null);	
 				
 				
 				
