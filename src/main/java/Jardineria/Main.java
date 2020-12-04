@@ -64,25 +64,37 @@ public class Main {
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Modificar");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				clientes.setEnabled(true);
+				
+				
+			}
+		});
 		btnNewButton_1.setBounds(165, 37, 126, 30);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Borrar");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnNewButton_2.setBounds(330, 37, 126, 30);
 		frame.getContentPane().add(btnNewButton_2);
 		
-		JButton btnNewButton_3 = new JButton("X");
-		btnNewButton_3.addActionListener(new ActionListener() {
+		JButton ExitBoton = new JButton("X");
+		ExitBoton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				JFrame frame = new JFrame("Salir");
-				if(JOptionPane.showConfirmDialog(frame, "¿Seguro que quieres salir?", "SALIR", 
+				JFrame frame = new JFrame("Atras");
+				if(JOptionPane.showConfirmDialog(frame, "¿Seguro que quieres volver atras?", "SI", 
 						JOptionPane.YES_NO_OPTION)==JOptionPane.YES_NO_OPTION) {
-					System.exit(0);
+					//new createUser().frame.setVisible(false);
+					//new Main().frame.setVisible(true);
 				}
 			}
 		});
-		btnNewButton_3.setBounds(691, 42, 85, 30);
-		frame.getContentPane().add(btnNewButton_3);
+		ExitBoton.setBounds(691, 42, 85, 30);
+		frame.getContentPane().add(ExitBoton);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 94, 679, 442);
@@ -94,10 +106,13 @@ public class Main {
 		clientes = new JTable();
 		clientes.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null, null},
+				{1, "Manuel", "741589P", "nosequeponer69", "gacintoperez@hotmail.com"},
+				{2, "Juan", "123456K", "intento90", "juancada@gmail.com"},
+				{3, "Emma", "2345678J", "dametodoloquequieras", "emmamiedes@yahoo.es"},
+				{4, "Papa_Dario", "01837456D", "nomedesnada", "espapá@hotmail.com"},
 			},
 			new String[] {
-				"Codigo cliente", "Nombre cliente", "Numero de Identidad", "Numero de Identidad", "Contrase\u00F1a", "correo Electronico"
+				"Codigo cliente", "Nombre cliente", "Numero de Identidad", "Contraseyia", "correo Electronico"
 			}
 		));
 		clienetsTableScroll.setViewportView(clientes);
@@ -106,6 +121,13 @@ public class Main {
 		tabbedPane.addTab("Pedidos", null, pedidosScrollTable, null);
 		
 		pedisos = new JTable();
+		pedisos.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"cosa5", "cosa4", "New column", "cosa2", "cosa1"
+			}
+		));
 		pedidosScrollTable.setViewportView(pedisos);
 		
 		

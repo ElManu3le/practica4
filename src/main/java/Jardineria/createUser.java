@@ -5,6 +5,7 @@ import Jardineria.PatronBuilder.*;
 
 import javax.swing.JFrame;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
@@ -22,11 +23,11 @@ import java.awt.Color;
 public class createUser {
 
 	public JFrame frame;
-	private JTextField codclienteText;
-	private JTextField nombretText;
-	private JTextField numIdentidad;
-	private JTextField correoText;
-	private JPasswordField contraseniaText;
+	public JTextField codclienteText;
+	public JTextField nombretText;
+	public JTextField numIdentidad;
+	public JTextField correoText;
+	public JPasswordField contraseniaText;
 	
 	ArrayList<JTextField> clientesList = new ArrayList<>();
 	
@@ -57,7 +58,7 @@ public class createUser {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 608, 520);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -127,6 +128,8 @@ public class createUser {
 		contraseniaText.setBounds(121, 315, 96, 19);
 		frame.getContentPane().add(contraseniaText);
 		
+	
+		
 		final JButton OkBoton = new JButton("ACEPTAR");
 		OkBoton.setForeground(Color.BLACK);
 		OkBoton.addActionListener(new ActionListener() {
@@ -164,5 +167,22 @@ public class createUser {
 		});
 		RestBoton.setBounds(276, 386, 140, 36);
 		frame.getContentPane().add(RestBoton);
+		
+		JButton salirBoton = new JButton("X");
+		salirBoton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				JFrame frame = new JFrame("Salir");
+				if(JOptionPane.showConfirmDialog(frame, "¿Seguro que quieres salir?", "SALIR", 
+						JOptionPane.YES_NO_OPTION)==JOptionPane.YES_NO_OPTION) {
+					System.exit(0);
+				}else {
+					
+					
+				}
+			}
+		});
+		salirBoton.setBounds(470, 48, 85, 21);
+		frame.getContentPane().add(salirBoton);
 	}
 }
