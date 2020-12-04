@@ -74,9 +74,13 @@ public class Main {
 		btnNewButton_1.setBounds(165, 37, 126, 30);
 		frame.getContentPane().add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("Borrar");
+		final JButton btnNewButton_2 = new JButton("Borrar");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				if(btnNewButton_2.isSelected())
+				{
+					
+				}
 			}
 		});
 		btnNewButton_2.setBounds(330, 37, 126, 30);
